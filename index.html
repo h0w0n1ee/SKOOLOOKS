@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>SKOOLOOKS</title>
+    <!-- 0. 파비콘 -->
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+
+    <!-- css -->
+        <!-- 초기화 -->
+        <link rel="stylesheet" href="./css/reset.css" type="text/css">
+        <!-- 공통서식 -->
+        <link rel="stylesheet" href="./css/common.css" type="text/css">
+        <!-- 레이아웃 -->
+            <!-- 모바일 -->
+        <link rel="stylesheet" href="./css/mobile.css" type="text/css">
+            <!-- 태블릿 -->
+        <link rel="stylesheet" href="./css/tablet.css" type="text/css">
+            <!-- PC -->
+        <link rel="stylesheet" href="./css/pc.css" type="text/css">
+
+    <!-- 라이브러리 -->
+        <!-- 폰트어썸 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <!-- 제이쿼리 라이브러리 -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <!-- 제이쿼리 랩퍼 -->
+        <script>
+        $(document).ready(function(){
+            // 1. 변수선언
+            const mnu = $('.gnb > ul > li >a'); // 메인메뉴 변수
+    
+            // 2. 메뉴 클릭시 해당 서브 나오게 하기
+            mnu.click(function(){
+            // 아코디언 메뉴!!
+            $('.sub').slideUp();
+            $(this).next().slideDown();
+            $('i').removeClass('act');
+            $(this).find('i').addClass('act');
+            });
+        });
+        </script>
+</head>
+
+
+<body>
+    <form name="search" action="search.php" method="post">
+        <input type="checkbox" id="toggle">
+        <input type="checkbox" id="sbtn">
+
+        <!-- 헤더 -->
+        <header>
+            <div class="h_top">
+                <!-- 상단로고 -->
+                <h1>
+                    <a href="index.html" title="메인페이지로 바로가기">
+                        <img src="./img/logo_org.png" alt="상단로고">
+                    </a>
+                </h1>
+
+                <!-- 로그인, 회원가입 -->
+                <nav class="lnb">
+                    <ul>
+                        <li><a href="#" title="로그인">로그인</a></li>
+                        <li><a href="#" title="회원가입">회원가입</a></li>
+                    </ul>
+                </nav>
+
+                <!-- 검색폼 -->
+                <!-- <fieldset>
+                    <input type="search" id="search" placeholder="검색어를 입력하세요">
+                    <label for="search" class="fas fa-search"><span>검색버튼</span></label>
+
+                    <p class="word">추천검색어</p>
+                    <ul>
+                        <li><a href="#" title="룩북">룩북</a></li>
+                        <li><a href="#" title="리뷰">리뷰</a></li>
+                        <li><a href="#" title="질문">자주묻는질문</a></li>
+                        <li><a href="#" title="매장">매장</a></li>
+                        <li><a href="#" title="이벤트">이벤트</a></li>
+                    </ul>
+                </fieldset> -->
+            </div>
+
+            <!-- 전체메뉴 -->
+            <label for="toggle" class="ham_btn">
+                <i class="fas fa-bars"></i>
+            </label>
+
+            <!-- 검색 -->
+            <label for="sbtn" class="sear_btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </label>
+
+            <!-- 메인 내비게이션 2단 메뉴 -->
+            <nav class="gnb">
+                    <!-- 닫기버튼 -->
+                <label for="toggle" class="c_btn"><i class="fa-solid fa-xmark"></i></label>
+                <ul>
+                    <li> <!--1. 교복-->
+                        <a href="#" title="교복">교복<i class="fas fa-angle-down"></i></a>
+                            <ul class="sub">
+                                <li><a href="#" title="정장교복">정장교복</a></li>
+                                <li><a href="#" title="간편교복">간편교복</a></li>
+                                <li><a href="#" title="포인트">포인트</a></li>
+                                <li><a href="#" title="룩북">룩북</a></li>
+                            </ul>
+                    </li>
+
+                    <li> <!--2. 스쿨룩스-->
+                        <a href="#" title="스쿨룩스">스쿨룩스<i class="fas fa-angle-down"></i></a>
+                            <ul class="sub">
+                                <li><a href="#" title="브랜드스토리">브랜드스토리</a></li>
+                                <li><a href="#" title="스쿨룩랩">스쿨룩랩</a></li>
+                                <li><a href="#" title="교복안심">교복안심</a></li>
+                                <li><a href="#" title="캠페인">캠페인</a></li>
+                            </ul>
+                    </li>
+
+                    <li> <!--3. 이벤트-->
+                        <a href="#" title="이벤트">이벤트<i class="fas fa-angle-down"></i></a>
+                            <ul class="sub">
+                                <li><a href="#" title="이벤트">이벤트</a></li>
+                                <li><a href="#" title="당첨자발표">당첨자발표</a></li>
+                            </ul>
+                    </li>
+
+                    <li> <!--4. 커뮤니티-->
+                        <a href="#" title="리뷰">리뷰</a>
+                    </li>
+
+                    <li> <!--5. 고객센터-->
+                        <a href="#" title="고객센터">고객센터<i class="fas fa-angle-down"></i></a>
+                            <ul class="sub">
+                                <li><a href="#" title="자주묻는질문">자주묻는질문</a></li>
+                                <li><a href="#" title="1:1문의">1:1문의</a></li>
+                                <li><a href="#" title="매장찾기">매장찾기</a></li>
+                                <li><a href="#" title="공지사항">공지사항</a></li>
+                            </ul>
+                    </li>
+
+                    <!-- 로그인/회원가입 -->
+                    <li class="lojo">
+                        <a href="#" title="로그인" class="login">로그인</a>
+                        <a href="#" title="회원가입" class="join"> 회원가입</a>
+                    </li>
+
+                    <!-- 이벤트 배너 -->
+                    <div class="evet_img">
+                        <a href="#" title="이벤트">
+                            <img src="./img/event01.jpg" alt="이벤트배너">
+                        </a>
+                        <a href="#" title="이벤트">
+                            <img src="./img/event02.jpg" alt="이벤트배너">
+                        </a>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+
+
+
+        <!-- 메인 -->
+        <main>
+            <section class="visual">
+                <h2></h2>
+                <div class="visual_slide"></div>
+            </section>
+            <img src="./img/mbanner01.png" alt="배너">
+
+            <!-- 스쿨룩스 텍스트 키프레임 애니메이션 -->
+            <div class="skool_title">
+                <div class="skool_track">
+                    <div class="skool_txt">
+                        &nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스
+                    </div>
+                </div>
+            </div>
+
+            <!-- 스쿨룩스 소개 -->
+            <article class="con_skool">
+                <div>
+                    <img src="./img/logo_org.png" alt="스쿨룩스 내용" class="con_skool_logo">
+
+                    <p><span class="bold">디자인으로 소통하다</span><img src="./img/icon_speaker.png" alt="스쿨룩스 스피커"><br>학생들과 서로 마주보며 소통하는 스쿨룩스<br>남다른 디자인의 교복으로 학생들의 스쿨라이프를 함께합니다.</p>
+
+                    <img src="./img/img_skool.png" alt="스쿨룩스 내용 이미지">
+
+                    <p>스쿨룩스는 1318과 끊임없이 교감하여<br>학생들의 꿈, 희망, 자유를 지향합니다.</p>
+                </div>
+            </article>
+
+            <!-- 정장교복 -->
+            <article class="con_uniform">
+                <div class="con_uniform_suit">
+                    <h3>정장교복</h3>
+                    
+                    <!-- 좌/우 아이콘 -->
+                    <i class="fa-solid fa-angle-left"></i>
+                    <i class="fa-solid fa-angle-right"></i>
+
+                    <div class="uniform_suit">
+                        <!-- 정장교복 상품 간단소개 -->
+                        <ul class="suit_slides">
+                            <li>
+                                <p> <!-- 재킷 -->
+                                    <span class="suit_name">재킷</span>
+                                    <br>한겨울에도 최적의 온도 유지! 따뜻한 보온 재킷
+                                </p>
+                                <a href="javascipt:void(0);" title="재킷 상세페이지로 바로가기"><img src="./img/uniform_suit01.jpg" alt="재킷"></a>
+                            </li>
+                            <li>
+                                <p>
+                                    <span class="suit_name">바지</span>
+                                    <br>극강의 편안함! 고품격 스판 바지
+                                </p>
+                                <a href="#" title="바지 상세페이지로 바로가기"><img src="./img/uniform_suit02.jpg" alt="바지"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="javascipt:void(0);" title="정장교복 더보기"><input type="button" value="더보기"></a>
+                </div>
+            </article>
+
+            <!-- 간편교복 -->
+            <article class="con_uniform2">
+                <div class="con_uniform_suit">
+                    <h3>간편교복</h3>
+                    
+                    <!-- 좌/우 아이콘 -->
+                    <i class="fa-solid fa-angle-left"></i>
+                    <i class="fa-solid fa-angle-right"></i>
+
+                    <div class="uniform_suit">
+                        <!-- 간편교복 상품 간단소개 -->
+                        <ul class="suit_slides">
+                            <li>
+                                <p> <!-- 맨투맨 -->
+                                    <span class="suit_name">맨투맨</span>
+                                    <br>데일리 교복으로 딱! 맨투맨 하나로 깔끔 스타일링
+                                </p>
+                                <a href="javascipt:void(0);" title="재킷 상세페이지로 바로가기"><img src="./img/uniform_suit201.jpg" alt="재킷"></a>
+                            </li>
+                            <li>
+                                <p>
+                                    <span class="suit_name">바지</span>
+                                    <br>극강의 편안함! 고품격 스판 바지
+                                </p>
+                                <a href="javascipt:void(0);" title="바지 상세페이지로 바로가기"><img src="./img/uniform_suit02.jpg" alt="바지"></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="javascipt:void(0);" title="정장교복 더보기"><input type="button" value="더보기"></a>
+                </div>
+            </article>
+
+            <!-- 디자인룩북 -->
+            <article class="con_look">
+                <div class="con_look_uni">
+                    <h3>디자인룩북</h3>
+                    <p>스타일은 살리고 활동은 편한 스쿨룩스 스타일을 감상해보세요</p>
+                    <div class="look_img">
+                        <ul>
+                            <li><a href="javascipt:void(0);"><img src="./img/lookbook01.jpg" alt="룩북이미지"></a></li>
+                        </ul>
+                        <div class="box01"></div>
+                        <div class="box02"></div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 제로베이스원 텍스트 키프레임 애니메이션 -->
+            <div class="zb1_title">
+                <div class="zb1_track">
+                    <div class="zb1_txt">
+                        &nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 스쿨룩스 이벤트 - 배너 -->
+            <article class="con_event_banner">
+                <div>
+                    <h3>스쿨룩스 이벤트</h3>
+                    <p>스쿨룩스 이벤트로 혜택 팡팡!</p>
+                    <div>
+                        <ul>
+                            <li>
+                                <a href="javascipt:void(0);">
+                                    <img src="./img/logo_org.png" alt="이벤트배너">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- 스쿨룩스 이벤트 - 유튜브 -->
+            <article class="con_event_you">
+                <div>
+                    <h3>스쿨룩스 YOUTUBE</h3>
+                    <p>신나는 스쿨라이프를 위한 최신 트렌드!</p>    
+                </div>
+                <ul>
+                    <li class="event_you_url">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/68BU91hdxf0?si=8wyhmGzpMBQqwO7l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </li>
+                    <li class="event_you_url2">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/NU55pl-lig8?si=yOh5hCh-Az3aDavr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </li>
+                </ul>
+            </article>
+
+
+            <!-- 스쿨룩스 안내 -->
+            <article class="con_info">
+                <div class="info">
+                    <!-- 매장찾기 -->
+                    <div class="info_search">
+                        <a href="javascipt:void(0);" title="매장찾기">
+                            <i class="fa-solid fa-magnifying-glass-location"></i>
+                            <p>매장찾기</p>
+                        </a>
+                    </div>
+
+                    <!-- 문의하기 -->
+                    <div class="info_ask">
+                        <a href="javascipt:void(0);" title="문의하기">
+                            <i class="fa-solid fa-comments"></i>
+                            <p>문의하기</p>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+
+
+        <!-- 푸터 -->
+        <footer>
+            <div class="f_top">
+                <a href="javascipt:void(0);" title="로고"><img src="./img/logo_wht.png" alt="푸터로고"></a>
+                <nav class="f_nav">
+                    <a href="javascipt:void(0);" title="이용약관">이용약관</a>
+                    <a href="javascipt:void(0);" title="개인정보취급방침">개인정보취급방침</a>
+                    <a href="javascipt:void(0);" title="제휴문의">제휴문의</a>
+                    <a href="javascipt:void(0);" title="대리점개설문의">대리점개설문의</a>
+                    <a href="javascipt:void(0);" title="오시는길">오시는길</a>
+                </nav>
+
+
+                <!-- 아이콘 -->
+                <div class="f_sns_icon">
+                    <a href="javascipt:void(0);" title="블로그"> <!--블로그-->
+                        <img src="./img/icon_ft_blog.png" alt="블로그" class="f_sns_blog">
+                    </a>
+
+                    <a href="javascipt:void(0);" title="페이스북"> <!--페이스북-->
+                        <img src="./img/icon_ft_fb.png" alt="페이스북" class="f_sns_face">
+                    </a>
+
+                    <a href="javascipt:void(0);" title="인스타그램"> <!--인스타그램-->
+                        <img src="./img/icon_ft_insta.png" alt="인스타그램" class="f_sns_insta">
+                    </a>
+
+                    <a href="javascipt:void(0);" title="유튜브"> <!--유튜브-->
+                        <img src="./img/icon_ft_youtube.png" alt="유튜브" class="f_sns_you">
+                    </a>
+                </div>
+            <div class="f_bottom">
+                <address>
+                    <p>
+                        (주)더엔진&nbsp;&nbsp;&#x007C;&nbsp;&nbsp;대표이사 : 홍길동&nbsp;&nbsp;&#x007C;&nbsp;&nbsp;서울특별시 OO구 000(OO빌딩)0층
+                        사업자등록번호 : 000-00-00000&nbsp;&nbsp;&#x007C;&nbsp;&nbsp;통신판매업신고 20000-서울O동-00000
+                        개인정보 관리책입자 : 홍길동&nbsp;&nbsp;&#x007C;&nbsp;&nbsp;이메일 wbmaster@skoolooks.com
+                        <br>
+                        대표번호 : 0000-0000
+                    </p>
+
+                    <p>
+                        &#x00A9; 2022.SKOOLOOKS All rights reserved.
+                    </p>
+                </address>
+            </div>
+            </div>
+
+
+        </footer>
+    </form>
+
+    <script>
+        // $(document).ready(function(){
+        //     $('.suit_slides li').last().prependTo('.suit_slides');
+        //     $('.suit_slides').css('left',-500);
+        //     setInterval(function(){
+        //         $('.suit_slides').animate({left:'-='+500}, 'slow', function(){
+        //             $('.suit_slides li').first().appendTo('.suit_slides');
+        //             $('.suit_slides').css('left',-500);
+        //         });
+        //     }, 2000);
+        // });
+    </script>
+</body>
+</html>
