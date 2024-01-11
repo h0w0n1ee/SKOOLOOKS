@@ -1,23 +1,606 @@
 @charset "utf-8";
+
 /* tablet.css 레이아웃 */
+@media screen and (min-width:767px) and (max-width:1024px) {
 
-/* ~~~ 헤더 서식 ~~~ */
+.sear_btn{display: none;}
+
+    /* ~~~ 헤더 서식 ~~~ */
+  header{
+    position: relative;
+    width: 100%;
+    height: 130px;
+    background: #fff;
+  }
+
+  header h1{
+    position: absolute;
+    top: 30px; left: 39%;
+  }
+  header h1 img{
+    width: 190px;
+  }
+  /* 체크박스 숨기기 (내비게이션, 검색) */
+  #toggle, #sbtn{display: none;}
+
+  .ham_btn, .sear_btn{
+    color: #301D18;
+    font-size: 24px;
+    padding: 5px;
+    position: absolute;
+    top: 12px;
+    cursor: pointer;
+  }
+  .ham_btn{
+    left: 30px; right: auto;
+    top: 80px;
+    font-size: 1.8rem;
+  }
+  .sear_btn{display: none;}
+
+
+  /* ~~~ 내비게이션 서식 ~~~ */
+  /* 메인메뉴 */
+  .gnb{
+    width: 400px;
+    position: absolute;
+    left: auto;
+    right: 250px; top: 90px;
+    /* background: rgba(0,0,0,.5); */
+  }
+  .gnb > ul{
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10%;
+  }
+  .gnb > ul > li{
+    border: none;
+    padding: 0px 3.3%;
+    position: relative;
+    text-align: center;
+    /* background: #f00; */
+  }
+  .gnb > ul > li > a{
+    font-size: 1rem;
+  }
+  i.fa-angle-down{display: none;}
+  .act{display: none;}
+
+  /* 내비게이션 이벤트배너 */
+  .gnb > ul > .evet_img{display: none;}
+
+
+  /* 서브메뉴 */
+  .sub{
+    display: none;
+    position: absolute;
+    left: 0px; top: 39px;
+    width: 100%; height: 100px;
+    padding: 15px 0px;
+    background-color: rgba(255,255,255,.9);
+    text-align: center;
+    line-height: 210%;
+  }
+  .sub > li > a{
+    padding: 0px 3%;
+    font-size: 0.68rem;
+  }
+
+  .gnb li:first-child .sub{
+    padding-left: 300px;
+    left: -300px;
+  }
+
+  .gnb li:nth-child(5) .sub{padding-right: 300px;}
+
+
+  /* 전체메뉴 아이콘 터치 잘 되게 위로 올리기 */
+  .ham_btn{z-index: 9001;}
+  
+  /* 전체메뉴 클릭시 서브메뉴 나오게 하기 */
+  #toggle:checked + header .gnb .sub{display: block;}
+
+  /* lnb, 검색박스 움직이지 않게 하기 */
+  #toggle:checked + header > .h_top > .lnb{left: auto;}
+  #toggle:checked + header > .h_top > fieldset{left: auto;}
+
+  /* 로그인, 회원가입 */
+    /*tablet, pc에 해당하는 것 */
+        .lnb > ul{
+          position: absolute;
+          left: auto;
+          right: 0px; top: 30px;
+          width: 160px;
+          display: flex;
+          flex-wrap: wrap;
+        }
+        .lnb > ul > li{
+            width: 50px;
+            margin: 0px 5px;
+            padding: 5px;
+            text-align: center;
+            /* border: 1px solid #f00; */
+        }
+        .lnb > ul > li > a{font-size: 13px;}
+        .h_top > .lnb > ul > li > .lnb_login{color: #F89828;}
+
+      /* mobile에만 해당하는 것 */
+    .gnb > ul > .lojo{display: none;}
+
+  /* 닫기버튼 */
+  .c_btn{display: none;}
+
+
+  /* 검색 */
+  fieldset{
+    position: absolute;
+    right: 0px; top: 80px;
+    width: 450px;
+    left: auto;
+    text-align: right;
+  }
+  /* 검색 - 검색창 */
+  #search{
+    width: 40%;
+    background: none;
+    border: 1px solid #F89828;
+    border-radius: 50px;
+    position: absolute;
+    right: 20px;
+    padding: 10px;
+    margin: 0px auto;
+    background: #fff;
+  }
+  fieldset > a > .fa-search{
+    position: absolute;
+    top: 11px; right: 30px;
+    font-size: 15px;
+    color: #F89828;
+    /* background-color: #f00; */
+  }
+  fieldset > a > .fa-search > span{display: none;}
+
+  .rek{display: none;}
+  .s_c_btn{display: none;}
 
 
 
 
 
+  /* ~~~ 메인 서식 ~~~ */
+  /* 슬라이드 서식 */
+  .visual{
+    position: relative;
+    height: 700px;
+  }
+  .visual > h2{display: none;}
 
-/* ~~~ 내비게이션 서식 ~~~ */
+  /* 슬라이드 순서 바꾸기 */
+  .visual_slide01{z-index: 6;}
+  .visual_slide02{z-index: 5; display: none;}
+  .visual_slide03{z-index: 4; display: none;}
+  .visual_slide04{z-index: 3; display: none;}
+  .visual_slide05{z-index: 2; display: none;}
+  .visual_slide06{z-index: 1; display: none;}
+
+
+  /* 좌우버튼서식 */
+  .visual > .s_btn{
+    display: flex;
+    position: absolute;
+    top: 90%; left: 3%;
+    z-index: 20;
+  }
+  .visual > .s_btn > li > i{
+    background: rgba(255,255,255,.2);
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 12px 6px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  /* 컨트롤 버튼 서식 */
+  .visual > .ctrl_btn{
+    position: absolute;
+    display: flex;
+    left: 15%; top: 93%;
+    z-index: 20;
+  }
+  .visual > .ctrl_btn > li{
+    width: 12px; height: 12px;
+    background: #fff;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .v_on{background: #ebb400 !important;}
+
+  main > .visual > .visual_slide_m > img{display: none;}
+
+
+  /* 스쿨룩스 텍스트 */
+    .skool_title{
+        position: relative;
+        width: 100%; max-width: 100%; height: auto;
+        padding: 25px 0;
+        background: #F89828; color: #fff;
+        line-height: 5px;
+        overflow-x: hidden; overflow-y: hidden;
+        margin: -1.9px 0;
+    }
+    .skool_title .skool_track{
+        font-size: 1.2rem;
+        position: absolute;
+        white-space: nowrap;
+        will-change: transform;
+        animation: play 20s linear infinite;
+    }
+
+  /* 스쿨룩스 텍스트 키프레임 애니메이션 */
+    @keyframes play{
+        from{transform: translateX(0);}
+        to{transform: translateX(-50%);}
+    }
+    
+
+
+  /* 내용 */
+  /* 스쿨룩스 소개 내용 */
+  .con_skool{
+    margin: 50px 0px;
+    height: 180px;
+    /* background: #ff0; */
+  }
+  .con_skool > div{
+    display: flex;
+    justify-content: space-around;
+  }
+  .con_skool > div > .skool_logo_box, .con_skool > div > .skool_info_box{
+    width: 50%;
+    /* background: rgba(0,0,0,.2); */
+    text-align: center;
+  }
+  /* 디자인으로 소통하다 */
+  .con_skool > div > .skool_logo_box > .con_skool_logo{width: 70%; margin: 20px 50px 20px 50px;}
+  .con_skool > div > .skool_logo_box > .logo_info{font-size: 0.8rem;}
+  .con_skool .bold{
+    font-size: 0.9rem;
+    font-weight: bold;
+    line-height: 35px;
+  }
+
+  /* 1318세대 */
+  .con_skool > div > .skool_info_box > .con_skool_info{width: 55%; margin: 0px 40px 30px 50px;}
+
+
+
+  /* 스쿨룩스 교복 */
+  .uniform{display: flex;}
+  #con_uniform, #con_uniform2{
+    width: 50%; height: 350px;
+    text-align: center;
+    background: #F2F2F2;
+    position: relative;
+    padding: 20px 0px;
+    overflow: hidden;
+  }
+  #con_uniform{border-right: 3px solid#fff;}
+
+  .suit_slides{
+    /* background: #f00; */
+    width: 100%; height: 270px;
+    overflow-y: hidden;
+  }
+
+  /* 스쿨룩스 교복 - 좌/우 아이콘 */
+  #con_uniform > .con_uniform_suit > .uniform_icon > .fa-angle-left, 
+  #con_uniform > .con_uniform_suit > .uniform_icon > .fa-angle-right{
+    position: absolute;
+    top: 50%;
+    /* border: 2px solid #f00; */
+    font-size: 1.5rem;
+    color: #A4A4A4;
+    cursor: pointer;
+    z-index: 2;
+  }
+  #con_uniform > .con_uniform_suit > .uniform_icon > .fa-angle-left{left: 5%;}
+  #con_uniform > .con_uniform_suit > .uniform_icon > .fa-angle-right{right: 5%}
+
+  /* 스쿨룩스 교복 - ul */
+  #con_uniform .uniform_suit > ul{
+  display: flex;
+  width: 1500px; height: 250px;
+  position: absolute; top: 65px;
+  z-index: 1;
+  /* background-color: rgba(0,0,0,.3); */
+  }
+  #con_uniform .uniform_suit > ul li{width: 400px;}
+  #con_uniform .uniform_suit > ul img{width: 60%;} /* 스쿨룩스 교복 - 이미지 */
+  .uniform_button{
+    position: absolute;
+    bottom: 5%; right: 43%;
+  }
+
+
+  /* 스쿨룩스 교복 - 상품제목 */
+  .uniform_suit > .suit_slides > li > p > .suit_name{
+    font-weight: 600; font-size: 0.9rem;
+    /* background: #f00; */
+    line-height: 20px;
+  }
+
+
+  /*  */
+
+
+  /* 스쿨룩스 교복2 */
+  .suit_slides2{
+    /* background: #f00; */
+    width: 100%; height: 270px;
+    overflow-y: hidden;
+  }
+
+  /* 스쿨룩스 교복2 - 좌/우 아이콘 */
+  #con_uniform2 > .con_uniform_suit2 > .uniform_icon2 > .fa-angle-left, 
+  #con_uniform2 > .con_uniform_suit2 > .uniform_icon2 > .fa-angle-right{
+    position: absolute;
+    top: 50%;
+    /* border: 2px solid #f00; */
+    font-size: 1.5rem;
+    color: #A4A4A4;
+    cursor: pointer;
+    z-index: 2;
+  }
+  #con_uniform2 > .con_uniform_suit2 > .uniform_icon2 > .fa-angle-left{left: 5%;}
+  #con_uniform2 > .con_uniform_suit2 > .uniform_icon2 > .fa-angle-right{right: 5%}
+
+  /* 스쿨룩스 교복2 - ul */
+  #con_uniform2 .uniform_suit2 > ul{
+  display: flex;
+  width: 1500px; height: 250px;
+  position: absolute; top: 65px;
+  z-index: 1;
+  /* background-color: rgba(0,0,0,.3); */
+  }
+  #con_uniform2 .uniform_suit2 > ul li{width: 400px;}
+  #con_uniform2 .uniform_suit2 > ul img{width: 60%;} /* 스쿨룩스 교복 - 이미지 */
+  .uniform_button2{
+    position: absolute;
+    bottom: 5%; right: 40%;
+  }
+
+
+  /* 스쿨룩스 교복2 - 상품제목 */
+  .uniform_suit2 > .suit_slides2 > li > p > .suit_name2{
+    font-weight: 600; font-size: 0.9rem;
+    /* background: #f00; */
+    line-height: 20px;
+  }
 
 
 
 
 
+  /* 디자인 룩북 */
+  .con_look{
+    height: 400px;
+    position: relative;
+    text-align: center;
+    /* background: #f00; */
+    overflow: hidden;
+  }
+  .con_look > #con_look_uni > p{margin-bottom: 10px;}
+  .con_look > #con_look_uni > ul{
+    display: flex;
+    width: 1280px;
+    position: absolute; top: 60px; left: 22%;
+  }
+  .con_look > #con_look_uni > ul li{
+    width: 27%;
+    position: absolute;
+    left: 35px;
+  }
+  .con_look > #con_look_uni > ul img{width: 100%;}
+  .con_look > #con_look_uni > ul > li > a > img{
+    width: 70%;
+    border-radius: 10%;
+    padding: 10px;
+    z-index: 1;
+  }
+  /* 디자인 룩북 - 도형 */
+  .box01, .box02{position: absolute; width: 100%;}
+  .box01{
+    height: 180px;
+    top: 56%; right: 10%;
+    z-index: -1;
+    background: #FFF2E2;
+  }
+  .box02{
+    height: 150px;
+    top: 71%;
+    z-index: -2;
+    background: #F89828;
+  }
+  .look_book{transform: translateY(280px);}
+  .look_btn{
+    width: 13px; height: 13px;
+    border: 2px solid #fff;
+    display: inline-block;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    z-index: 50;
+  }
+  .act{
+    background: #F89828;
+    position: relative;
+    left: -11px;
+  }
 
-/* ~~~ 푸터 서식 ~~~ */
 
 
 
+  /* 제베원 텍스트 */
+  .zb1_title{
+    position: relative;
+    width: 100%; max-width: 100%; height: auto;
+    padding: 25px 0;
+    background: #185AA4; color: #fff;
+    line-height: 5px;
+    overflow-x: hidden; overflow-y: hidden;
+    margin: -1.9px 0;
+  }
+  .zb1_title .zb1_track{
+    font-size: 1.2rem;
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: play 20s linear infinite;
+  }
 
 
+/* 스쿨룩스 이벤트(배너, 유튜브) */
+.event_banner > .con_event_banner_m{display: none; overflow: hidden;}
+
+.con_event_you, .con_event_banner_tc{
+    margin: 30px 0px;
+    width: 100%;
+}
+
+.con_event_you > div, .con_event_banner_tc > div{
+    margin: 30px 0px;
+    text-align: center;
+}
+/* 스쿨룩스 이벤트(배너,유튜브) - 제목 */
+.con_event_you > div > h3, .con_event_banner_tc > div > h3{
+    color: #185AA4;
+}
+
+/* 스쿨룩스 유튜브 - 배너 이미지 */
+.con_event_banner_tc ul > li{margin: 20px 0px;}
+.con_event_banner_tc ul > li > a > img{width: 100%;}
+
+/* 스쿨룩스 유튜브 - 영상 */
+.con_event_you{
+  position: relative;
+  height: 800px;
+
+  /* background: #f00; */
+}
+
+.con_event_you > ul > li{
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.con_event_you > ul > li > iframe{width: 600px;}
+
+
+  /* 스쿨룩스 안내 */
+  .con_info{
+    height: 100px;
+    background: #FFE297;
+    position: relative;
+  }
+
+  .con_info > .info{
+    padding: 10px 0px; margin: -1.5px 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  .con_info > .info > .info_search{
+    /* background: #00f; */
+    position: absolute;
+    left: 17%;
+  }
+  .con_info > .info > .info_ask{
+    /* background: #0ff; */
+    position: absolute;
+    right: 12%;
+  }
+  .con_info > div > div > a{
+    width: 250px;
+    display: flex;
+    line-height: 70px;
+    /* border: 1px solid #f00; */
+  }
+  .con_info > div > div > a > i{
+    color: #301D17;
+    font-size: 3rem;
+    /* background: #f00; */
+    background: #fff;
+    padding: 10px;
+    border-radius: 50%;
+  }
+  .con_info > div > div > a > p{
+    /* background: #ff0; */
+    font-size: 1.25rem; font-weight: 600;
+  }
+
+
+
+  /* ~~~ 푸터 서식 ~~~ */
+  footer{
+    height: 200px;
+    background: #333333;
+    color: #fff;
+    position: relative;
+  }
+
+  /* 이용약관... 5개 */
+  .f_nav > a{
+    color: #fff;
+    justify-content: space-between;
+    /* background: #f00; */
+    padding: 5px 0px; margin: 0px 0.7%;
+  }
+
+  .f_top > .f_top_a{
+    display: flex;
+    justify-content: space-around;
+  }
+  .f_top > .f_top_a > .f_nav{
+    /* background: #f00; */
+    /*width: 400px;*/ height: 15px;
+    position: absolute;
+    top: 30px; right: 20px;
+  }
+  .f_top > .f_top_a > .f_nav > a{margin: 0px 10px;}
+  .f_top > .f_top_a > a > img{
+    width: 35%;
+    margin: 10px 20px;
+    padding: 10px 0px;
+    /* background: #f00; */
+  }
+
+  /* 푸터 정보 */
+  footer address{
+    /* border:5px solid #ff0; */
+    width: 69%;
+    padding: 0px 3%;
+    line-height: 20px;
+    font-size: 0.7rem;
+    text-align: left;
+  }
+
+  /* 아이콘 */
+  .f_sns_icon{
+    position: absolute;
+    /* border: 3px solid #f00; */
+    top: 70%; right: 0px;
+  }
+  .f_sns_icon > a > img{
+    position: relative;
+    justify-content: flex-start;
+    /* background: #ff0; */
+    padding: 3px;
+    margin: 10px;
+  }
+
+  .f_sns_blog{width: 4%;}
+  .f_sns_face{width: 3%;}
+  .f_sns_insta{width: 6.5%;}
+  .f_sns_you{width: 6.5%;}
+}

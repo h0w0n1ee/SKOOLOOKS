@@ -26,22 +26,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
         <!-- 제이쿼리 라이브러리 -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-        <!-- 제이쿼리 랩퍼 -->
-        <script>
-        $(document).ready(function(){
-            // 1. 변수선언
-            const mnu = $('.gnb > ul > li >a'); // 메인메뉴 변수
-    
-            // 2. 메뉴 클릭시 해당 서브 나오게 하기
-            mnu.click(function(){
-            // 아코디언 메뉴!!
-            $('.sub').slideUp();
-            $(this).next().slideDown();
-            $('i').removeClass('act');
-            $(this).find('i').addClass('act');
-            });
-        });
-        </script>
 </head>
 
 
@@ -63,25 +47,30 @@
                 <!-- 로그인, 회원가입 -->
                 <nav class="lnb">
                     <ul>
-                        <li><a href="#" title="로그인">로그인</a></li>
+                        <li><a href="#" title="로그인" class="lnb_login">로그인</a></li>
                         <li><a href="#" title="회원가입">회원가입</a></li>
                     </ul>
                 </nav>
 
                 <!-- 검색폼 -->
-                <!-- <fieldset>
-                    <input type="search" id="search" placeholder="검색어를 입력하세요">
-                    <label for="search" class="fas fa-search"><span>검색버튼</span></label>
+                <fieldset>
+                    <!-- 닫기버튼 -->
+                    <label for="sbtn" class="s_c_btn"><i class="fa-solid fa-xmark"></i></label>
 
-                    <p class="word">추천검색어</p>
-                    <ul>
+                    <input type="search" id="search" placeholder="검색어를 입력하세요">
+                    <a href="#" title="검색">
+                        <label for="search" class="fas fa-search"><span>검색버튼</span></label>
+                    </a>
+
+                    <ul class="rek">
+                        <p class="word">추천검색어</p>
                         <li><a href="#" title="룩북">룩북</a></li>
                         <li><a href="#" title="리뷰">리뷰</a></li>
                         <li><a href="#" title="질문">자주묻는질문</a></li>
                         <li><a href="#" title="매장">매장</a></li>
                         <li><a href="#" title="이벤트">이벤트</a></li>
                     </ul>
-                </fieldset> -->
+                </fieldset>
             </div>
 
             <!-- 전체메뉴 -->
@@ -164,17 +153,54 @@
 
         <!-- 메인 -->
         <main>
+            <!-- 메인 슬라이드 -->
             <section class="visual">
-                <h2></h2>
-                <div class="visual_slide"></div>
+                <h2>메인슬라이드</h2>
+
+                <div class="visual_slide">
+                    <div class="visual_slide01">
+                        <img src="./img/event_banner01.jpg" alt="메인슬라이드">
+                    </div>
+                    <div class="visual_slide02">
+                        <img src="./img/event_banner02.jpg" alt="메인슬라이드">
+                    </div>
+                    <div class="visual_slide03">
+                        <img src="./img/event_banner03.jpg" alt="메인슬라이드">
+                    </div>
+                    <div class="visual_slide04">
+                        <img src="./img/event_banner04.jpg" alt="메인슬라이드">
+                    </div>
+                    <div class="visual_slide05">
+                        <img src="./img/event_banner05.jpg" alt="메인슬라이드">
+                    </div>
+                    <div class="visual_slide06">
+                        <img src="./img/event_banner06.jpg" alt="메인슬라이드">
+                    </div>
+                </div>
+
+                
+                <!-- 좌/우 방향버튼 -->
+                <ul class="s_btn">
+                    <li><i class="fa-solid fa-angle-left"></i></li>
+                    <li><i class="fa-solid fa-angle-right"></i></li>
+                </ul>
+
+                <!-- 컨트롤버튼 -->
+                <ul class="ctrl_btn">
+                    <li class="v_on">&nbsp;</li>
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
+                    <li>&nbsp;</li>
+                </ul>
             </section>
-            <img src="./img/mbanner01.png" alt="배너">
 
             <!-- 스쿨룩스 텍스트 키프레임 애니메이션 -->
             <div class="skool_title">
                 <div class="skool_track">
                     <div class="skool_txt">
-                        &nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스
+                        &nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스&nbsp;&nbsp;SKOOLOOKS&nbsp;&nbsp;스쿨룩스
                     </div>
                 </div>
             </div>
@@ -182,92 +208,143 @@
             <!-- 스쿨룩스 소개 -->
             <article class="con_skool">
                 <div>
-                    <img src="./img/logo_org.png" alt="스쿨룩스 내용" class="con_skool_logo">
+                    <div class="skool_logo_box">
+                        <img src="./img/logo_org.png" alt="스쿨룩스 내용" class="con_skool_logo">
 
-                    <p><span class="bold">디자인으로 소통하다</span><img src="./img/icon_speaker.png" alt="스쿨룩스 스피커"><br>학생들과 서로 마주보며 소통하는 스쿨룩스<br>남다른 디자인의 교복으로 학생들의 스쿨라이프를 함께합니다.</p>
-
-                    <img src="./img/img_skool.png" alt="스쿨룩스 내용 이미지">
-
-                    <p>스쿨룩스는 1318과 끊임없이 교감하여<br>학생들의 꿈, 희망, 자유를 지향합니다.</p>
-                </div>
-            </article>
-
-            <!-- 정장교복 -->
-            <article class="con_uniform">
-                <div class="con_uniform_suit">
-                    <h3>정장교복</h3>
-                    
-                    <!-- 좌/우 아이콘 -->
-                    <i class="fa-solid fa-angle-left"></i>
-                    <i class="fa-solid fa-angle-right"></i>
-
-                    <div class="uniform_suit">
-                        <!-- 정장교복 상품 간단소개 -->
-                        <ul class="suit_slides">
-                            <li>
-                                <p> <!-- 재킷 -->
-                                    <span class="suit_name">재킷</span>
-                                    <br>한겨울에도 최적의 온도 유지! 따뜻한 보온 재킷
-                                </p>
-                                <a href="javascipt:void(0);" title="재킷 상세페이지로 바로가기"><img src="./img/uniform_suit01.jpg" alt="재킷"></a>
-                            </li>
-                            <li>
-                                <p>
-                                    <span class="suit_name">바지</span>
-                                    <br>극강의 편안함! 고품격 스판 바지
-                                </p>
-                                <a href="#" title="바지 상세페이지로 바로가기"><img src="./img/uniform_suit02.jpg" alt="바지"></a>
-                            </li>
-                        </ul>
+                        <p class="logo_info"><span class="bold">디자인으로 소통하다</span>
+                            <img src="./img/icon_speaker.png" alt="스쿨룩스 스피커" class="logo_icon"></p>
+                        <p class="logo_info">학생들과 서로 마주보며 소통하는 스쿨룩스<br>남다른 디자인의 교복으로 학생들의 스쿨라이프를 함께합니다.</p>
                     </div>
-                    <a href="javascipt:void(0);" title="정장교복 더보기"><input type="button" value="더보기"></a>
-                </div>
-            </article>
 
-            <!-- 간편교복 -->
-            <article class="con_uniform2">
-                <div class="con_uniform_suit">
-                    <h3>간편교복</h3>
-                    
-                    <!-- 좌/우 아이콘 -->
-                    <i class="fa-solid fa-angle-left"></i>
-                    <i class="fa-solid fa-angle-right"></i>
+                    <div class="skool_info_box">
+                        <img src="./img/img_skool.png" alt="스쿨룩스 내용 이미지" class="con_skool_info">
 
-                    <div class="uniform_suit">
-                        <!-- 간편교복 상품 간단소개 -->
-                        <ul class="suit_slides">
-                            <li>
-                                <p> <!-- 맨투맨 -->
-                                    <span class="suit_name">맨투맨</span>
-                                    <br>데일리 교복으로 딱! 맨투맨 하나로 깔끔 스타일링
-                                </p>
-                                <a href="javascipt:void(0);" title="재킷 상세페이지로 바로가기"><img src="./img/uniform_suit201.jpg" alt="재킷"></a>
-                            </li>
-                            <li>
-                                <p>
-                                    <span class="suit_name">바지</span>
-                                    <br>극강의 편안함! 고품격 스판 바지
-                                </p>
-                                <a href="javascipt:void(0);" title="바지 상세페이지로 바로가기"><img src="./img/uniform_suit02.jpg" alt="바지"></a>
-                            </li>
-                        </ul>
+                        <p class="skool_info">스쿨룩스는 1318과 끊임없이 교감하여<br>학생들의 꿈, 희망, 자유를 지향합니다.</p>
                     </div>
-                    <a href="javascipt:void(0);" title="정장교복 더보기"><input type="button" value="더보기"></a>
                 </div>
             </article>
+
+            <!-- 정장,간편 교복 -->
+            <section class="uniform">
+                <!-- 정장교복 -->
+                <article id="con_uniform" class="con_uni">
+                    <div class="con_uniform_suit">
+                        <h3>정장교복</h3>
+                        
+                        <!-- 좌/우 아이콘 -->
+                        <div class="uniform_icon">
+                            <i class="fa-solid fa-angle-left"></i>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+
+                        <div class="uniform_suit">
+                            <!-- 정장교복 상품 간단소개 -->
+                            <ul class="suit_slides">
+                                <li>
+                                    <p> <!-- 재킷 -->
+                                        <span class="suit_name">재킷</span>
+                                        <br>한겨울에도 최적의 온도 유지! 따뜻한 보온 재킷
+                                    </p>
+                                    <a href="javascipt:void(0);" title="재킷 상세페이지로 바로가기"><img src="./img/uniform_suit01.jpg" alt="재킷"></a>
+                                </li>
+
+                                <li>
+                                    <p>  <!-- 바지 -->
+                                        <span class="suit_name">바지</span>
+                                        <br>극강의 편안함! 고품격 스판 바지
+                                    </p>
+                                    <a href="#" title="바지 상세페이지로 바로가기"><img src="./img/uniform_suit02.jpg" alt="바지"></a>
+                                </li>
+
+                                <li>
+                                    <p>  <!-- 와이셔츠 -->
+                                        <span class="suit_name">와이셔츠</span>
+                                        <br>가볍고 부드러운 프리미엄 만능 와이셔츠
+                                    </p>
+                                    <a href="#" title="와이셔츠 상세페이지로 바로가기"><img src="./img/uniform_suit03.jpg" alt="와이셔츠"></a>
+                                </li>
+
+                                <li>
+                                    <p>  <!-- 스커트 -->
+                                        <span class="suit_name">스커트</span>
+                                        <br>최강스판 쭉.쭉. 스커트
+                                    </p>
+                                    <a href="#" title="스커트 상세페이지로 바로가기"><img src="./img/uniform_suit04.jpg" alt="스커트"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 더보기버튼 -->
+                        <a href="javascipt:void(0);" title="정장교복 더보기" class="uniform_button"><input type="button" value="더보기"></a>
+                    </div>
+                </article>
+                <br class="block">
+                <!-- 간편교복 -->
+                <article id="con_uniform2" class="con_uni2">
+                    <div class="con_uniform_suit2">
+                        <h3>간편교복</h3>
+                        
+                        <!-- 좌/우 아이콘 -->
+                        <div class="uniform_icon2">
+                            <i class="fa-solid fa-angle-left"></i>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+
+                        <div class="uniform_suit2">
+                            <!-- 간편교복 상품 간단소개 -->
+                            <ul class="suit_slides2">
+                                <li>
+                                    <p> <!-- 맨투맨 -->
+                                        <span class="suit_name2">맨투맨</span>
+                                        <br>데일리 교복으로 딱! 맨투맨 하나로 깔끔 스타일링
+                                    </p>
+                                    <a href="javascipt:void(0);" title="재킷 상세페이지로 바로가기"><img src="./img/uniform_suit201.jpg" alt="재킷"></a>
+                                </li>
+
+                                <li>
+                                    <p> <!-- 후드티 -->
+                                        <span class="suit_name2">후드티&#x0026;집업</span>
+                                        <br>말할 수 없이 포근한 데일리 후드
+                                    </p>
+                                    <a href="javascipt:void(0);" title="후드티 상세페이지로 바로가기"><img src="./img/uniform_suit202.jpg" alt="후드티"></a>
+                                </li>
+
+                                <li>
+                                    <p> <!-- 스타디움 점퍼 -->
+                                        <span class="suit_name2">스타디움 점퍼</span>
+                                        <br>천연모직에 고급을 더하다, 부드러움의 끝판왕 야구점퍼
+                                    </p>
+                                    <a href="javascipt:void(0);" title="스타디움점퍼 상세페이지로 바로가기"><img src="./img/uniform_suit203.jpg" alt="스타디움점퍼"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 더보기버튼 -->
+                        <a href="javascipt:void(0);" title="정장교복 더보기" class="uniform_button2"><input type="button" value="더보기"></a>
+                    </div>
+                </article>
+            </section>
 
             <!-- 디자인룩북 -->
             <article class="con_look">
-                <div class="con_look_uni">
+                <div id="con_look_uni">
                     <h3>디자인룩북</h3>
                     <p>스타일은 살리고 활동은 편한 스쿨룩스 스타일을 감상해보세요</p>
-                    <div class="look_img">
-                        <ul>
-                            <li><a href="javascipt:void(0);"><img src="./img/lookbook01.jpg" alt="룩북이미지"></a></li>
-                        </ul>
-                        <div class="box01"></div>
-                        <div class="box02"></div>
+                    <ul>
+                        <li><a href="javascipt:void(0);"><img src="./img/lookbook01.jpg" alt="룩북이미지"></a></li>
+
+                        <li><a href="javascipt:void(0);"><img src="./img/lookbook02.jpg" alt="룩북이미지"></a></li>
+
+                        <li><a href="javascipt:void(0);"><img src="./img/lookbook03.jpg" alt="룩북이미지"></a></li>
+
+                        <li><a href="javascipt:void(0);"><img src="./img/lookbook04.jpg" alt="룩북이미지"></a></li>
+                    </ul>
+                    <div class="look_book">
+                        <span class="look_btn act">&nbsp;</span>
+                        <span class="look_btn">&nbsp;</span>
+                        <span class="look_btn">&nbsp;</span>
+                        <span class="look_btn">&nbsp;</span>
                     </div>
+                    <div class="box01"></div>
+                    <div class="box02"></div>
                 </div>
             </article>
 
@@ -275,28 +352,47 @@
             <div class="zb1_title">
                 <div class="zb1_track">
                     <div class="zb1_txt">
-                        &nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1
+                        &nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1&nbsp;&nbsp;제로베이스원&nbsp;&nbsp;ZB1
                     </div>
                 </div>
             </div>
 
 
             <!-- 스쿨룩스 이벤트 - 배너 -->
-            <article class="con_event_banner">
-                <div>
-                    <h3>스쿨룩스 이벤트</h3>
-                    <p>스쿨룩스 이벤트로 혜택 팡팡!</p>
+            <section class="event_banner">
+                <!-- 스쿨룩스 이벤트 :: 모바일용 -->
+                <article class="con_event_banner_m">
                     <div>
-                        <ul>
-                            <li>
-                                <a href="javascipt:void(0);">
-                                    <img src="./img/logo_org.png" alt="이벤트배너">
-                                </a>
-                            </li>
-                        </ul>
+                        <h3>스쿨룩스 이벤트</h3>
+                        <p>스쿨룩스 이벤트로 혜택 팡팡!</p>
+                        <div>
+                            <ul>
+                                <li>
+                                    <a href="javascipt:void(0);">
+                                        <img src="./img/event_banner01.jpg" alt="이벤트배너">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </article>
+                </article>
+
+                <!-- 스쿨룩스 이벤트 :: 태블릿/PC용 -->
+                <article class="con_event_banner_tc">
+                    <div>
+                        <h3>스쿨룩스 이벤트</h3>
+                        <p>스쿨룩스 이벤트로 혜택 팡팡!</p>
+                        <div>
+                            <ul>
+                                <li>
+                                    <a href="javascipt:void(0);">
+                                        <img src="./img/event_banner01.jpg" alt="이벤트배너">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </section>
 
 
             <!-- 스쿨룩스 이벤트 - 유튜브 -->
@@ -343,14 +439,17 @@
         <!-- 푸터 -->
         <footer>
             <div class="f_top">
-                <a href="javascipt:void(0);" title="로고"><img src="./img/logo_wht.png" alt="푸터로고"></a>
-                <nav class="f_nav">
-                    <a href="javascipt:void(0);" title="이용약관">이용약관</a>
-                    <a href="javascipt:void(0);" title="개인정보취급방침">개인정보취급방침</a>
-                    <a href="javascipt:void(0);" title="제휴문의">제휴문의</a>
-                    <a href="javascipt:void(0);" title="대리점개설문의">대리점개설문의</a>
-                    <a href="javascipt:void(0);" title="오시는길">오시는길</a>
-                </nav>
+                <div class="f_top_a">
+                    <a href="javascipt:void(0);" title="로고"><img src="./img/logo_wht.png" alt="푸터로고"></a>
+
+                    <nav class="f_nav">
+                        <a href="javascipt:void(0);" title="이용약관">이용약관</a>
+                        <a href="javascipt:void(0);" title="개인정보취급방침">개인정보취급방침</a>
+                        <a href="javascipt:void(0);" title="제휴문의">제휴문의</a>
+                        <a href="javascipt:void(0);" title="대리점개설문의">대리점개설문의</a>
+                        <a href="javascipt:void(0);" title="오시는길">오시는길</a>
+                    </nav>
+                </div>
 
 
                 <!-- 아이콘 -->
@@ -392,17 +491,198 @@
         </footer>
     </form>
 
+    <!-- 제이쿼리 -->
     <script>
-        // $(document).ready(function(){
-        //     $('.suit_slides li').last().prependTo('.suit_slides');
-        //     $('.suit_slides').css('left',-500);
-        //     setInterval(function(){
-        //         $('.suit_slides').animate({left:'-='+500}, 'slow', function(){
-        //             $('.suit_slides li').first().appendTo('.suit_slides');
-        //             $('.suit_slides').css('left',-500);
-        //         });
-        //     }, 2000);
-        // });
+        $(document).ready(function(){
+        // 윈도우창의 너비값 = $(window).width();  /  $(window).height();
+        // $(window).innerWidth();
+            const mnu = $('.gnb > ul > li >a'); // 메인메뉴 변수
+
+            let w_width;
+
+        // 브라우저의 크기가 변하면 함수내용을 실행
+        $(window).resize(function(){
+        w_width = $(window).innerWidth();
+        console.log(w_width);
+
+        // pc, 태블릿 이미지
+        if(w_width>=768){
+            
+            $('.visual > .visual_slide > .visual_slide01 > img').attr('src','./img/event_banner01.jpg');
+            $('.visual > .visual_slide > .visual_slide02 > img').attr('src','./img/event_banner02.jpg');
+            $('.visual > .visual_slide > .visual_slide03 > img').attr('src','./img/event_banner03.jpg');
+            $('.visual > .visual_slide > .visual_slide04 > img').attr('src','./img/event_banner04.jpg');
+            $('.visual > .visual_slide > .visual_slide05 > img').attr('src','./img/event_banner05.jpg');
+            $('.visual > .visual_slide > .visual_slide06 > img').attr('src','./img/event_banner06.jpg');
+        }else{ // 모바일 이미지  0~767
+            // 2. 모바일(767px)에서만 메뉴 클릭시 해당 서브 나오게 하기
+            mnu.click(function(){
+                // 아코디언 메뉴!!
+                
+                $('.sub').slideUp();
+                $(this).next().slideDown();
+                $('i').removeClass('act');
+                $(this).find('i').addClass('act');
+            });
+        
+            $('.visual > .visual_slide > .visual_slide01 > img').attr('src','./img/event_banner_m01.png');
+            $('.visual > .visual_slide > .visual_slide02 > img').attr('src','./img/event_banner_m02.png');
+            $('.visual > .visual_slide > .visual_slide03 > img').attr('src','./img/event_banner_m03.png');
+            $('.visual > .visual_slide > .visual_slide04 > img').attr('src','./img/event_banner_m04.png');
+            $('.visual > .visual_slide > .visual_slide05 > img').attr('src','./img/event_banner_m05.png');
+            $('.visual > .visual_slide > .visual_slide06 > img').attr('src','./img/event_banner_m06.png');
+        }
+        }).resize();
+
+
+            // 메인슬라이드
+            const l_btn = $('.visual > .s_btn > li:first-child'); // 이전(좌) 버튼
+            const r_btn = $('.visual > .s_btn > li:last-child'); // 다음(우) 버튼
+            const c_btn = $('.visual > .ctrl_btn > li'); // 컨트롤 버튼 (ooo)
+
+            let v_slide_img = $('.visual > div > div'); // 슬라이드 이미지
+
+            let ms = 0;
+
+            function fadeInOut(){
+                // console.log('시간함수호출');
+                v_slide_img.fadeOut();
+                $('.visual > .ctrl_btn > li').removeClass('v_on');
+
+                if(ms==5){
+                    ms=0;
+                }else{
+                    ms++
+                }
+                $('.visual > .ctrl_btn > li').eq(i).addClass('v_on');
+                v_slide_img.eq(ms).stop().fadeIn();
+            }
+
+            function fadeInOut2(){
+                v_slide_img.fadeOut();
+                $('.visual > .ctrl_btn > li').removeClass('v_on');
+                if(ms==0){
+                    ms=2;
+                }else{
+                    ms--;
+                }
+                $('.visual > .ctrl_btn > li').eq(ms).addClass('v_on');
+                v_slide_img.eq(ms).stop().fadeIn();
+            }
+
+            let Timer = setInterval(fadeInOut,5000);
+
+
+            // 좌우버튼 클릭시 해당하는 방향으로 슬라이드 이미지가 나오게하기
+            l_btn.click(function(){
+                fadeInOut2();
+            });
+            r_btn.click(function(){
+                fadeInOut();
+            });
+
+            // 좌우버튼 마우스 오버시, 시간제거
+            $('.visual > .s_btn > li').hover(function(){
+                clearInterval(Timer);
+            },function(){
+                Timer = setInterval(fadeInOut, 5000);
+            });
+
+            // 컨트롤버튼
+            c_btn.click(function(){
+                clearInterval(Timer);
+
+                vidx = $(this).index();
+                console.log(vidx);
+
+                v_slide_img.fadeOut();
+                $('.visual > .ctrl_btn > li').removeClass('v_on');
+
+                $('.visual > .ctrl_btn > li').eq(vidx).addClass('v_on');
+                v_slide_img.eq(vidx).stop().fadeIn();
+
+                ms = vdx;
+                clearInterval(Timer);
+            });
+
+            c_btn.mouseenter(function(){
+                clearInterval(Timer);
+            })
+            c_btn.mouseleave(function(){
+                Timer = setInterval(fadeInOut,5000);
+            });
+
+
+            // 스쿨룩스 정장교복 / 간편교복 슬라이드
+            let i=0;
+            const unibtn_r = $('#con_uniform .uniform_icon > .fa-angle-right');
+            const unibtn_l = $('#con_uniform .uniform_icon > .fa-angle-left');
+
+            const unibtn_r2 = $('#con_uniform2 .uniform_icon > .fa-angle-right');
+            const unibtn_l2 = $('#con_uniform2 .uniform_icon > .fa-angle-left');
+
+            const list_w = -375;
+
+            unibtn_r.click(function(){
+                if(i==3){
+                    i=0;
+                }else{
+                    i++;
+                }
+                //i = -(i*list_w);
+                console.log(i);
+
+                $('#con_uniform .suit_slides').animate({'left':i*list_w},500);
+            });
+            unibtn_r2.click(function(){
+                if(i==3){
+                    i=0;
+                }else{
+                    i++;
+                }
+                console.log(i);
+
+                $('#con_uniform2 .suit_slides').animate({'left':i*list_w},500);
+            });
+
+            unibtn_l.click(function(){
+                if(i==0){
+                    i=3;
+                }else{
+                    i--;
+                }
+                console.log(i);
+
+                $('#con_uniform .suit_slides').animate({'left':i*list_w},500);
+            });
+            unibtn_l2.click(function(){
+                if(i==0){
+                    i=2;
+                }else{
+                    i--;
+                }
+                console.log(i);
+
+                $('#con_uniform2 .suit_slides').animate({'left':i*list_w},500);
+            });
+
+            
+
+
+            // 스쿨룩스 룩북
+            const look_btn = $('#con_look_uni div > .look_btn')
+
+            look_btn.click(function(){
+                i = $(this).index();
+                console.log(i);
+                i = -(i*$('#con_look_uni ul li').width());
+                console.log(i);
+                $('#con_look_uni ul').animate({'left':i},500);
+
+                $('#con_look_uni div span').removeClass('act');
+                $(this).addClass('act');
+            });
+        });
     </script>
 </body>
 </html>
